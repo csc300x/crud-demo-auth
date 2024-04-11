@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+    <script src="/item-detail.js" defer></script>
+    <title>
+        <%= title %>
+    </title>
+    </head>
+
+    <body>
+        <% if(typeof user!='undefined' ){ %>
+            <p>Your email: <%= user.emails[0].value %>
+            </p>
+            <a href="/auth/logout"><button class="btn">Logout</button></a>
+            <% } %>
+                <div id="root"></div>
+                <h1>
+                    <%= title %>
+                </h1>
+                <h2> <a href="/menu/all">All</a></h2>
+                <div class="card-holder">
+                    <h3>
+                        <%= meal.name %>
+                    </h3>
+                    <p><a href="/menu/category/<%= meal.category %>">
+                            <%= meal.category %>
+                        </a></p>
+                    <p>
+                        <%= meal.subcategory %>
+                    </p>
+                    <p>$<%= meal.price %>
+                    </p>
+                    <button id="update-product-btn">Edit</button>
+                    <button type="button" id="delete-product-btn" value=<%=meal.id %> >Delete</button>
+                </div>
+                <button id="new-product-btn">New</button>
+                <%- include('./partials/new-product-form') %>
+                    <%- include('./partials/update-product-form') %>
+                        </div>
+    </body>
+
+    </html>

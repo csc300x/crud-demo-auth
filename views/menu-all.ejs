@@ -1,0 +1,58 @@
+<%- include('./partials/head') %>
+    <script src="/menu-all.js" defer></script>
+    <title>
+        <%= title %>
+    </title>
+    </head>
+
+    <body>
+        <% if(typeof user!='undefined' ){ %>
+            <p>Your email: <%= user.emails[0].value %>
+            </p>
+            <a href="/auth/logout"><button class="btn">Logout</button></a>
+            <% } %>
+                <h1>
+                    <%= title %>
+                </h1>
+                <div id="root">
+                    <button id="new-product-btn">New</button>
+                    <%- include('./partials/new-product-form') %>
+                        <form action="/menu/search" method="get">
+                            <input id="term" type="text" placeholder="Search By Name" name="term">
+                        </form>
+                        <table>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name </th>
+                                <th>Category </th>
+                                <th>Subcategory </th>
+                                <th>Price </th>
+                            </tr>
+                            <% for (const meal of meals){ %>
+                                <tr>
+                                    <td>
+                                        <a href="/menu/item/<%= meal.id %>">
+                                            <%= meal.id %>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= meal.name %>
+                                    </td>
+                                    <td>
+                                        <a href="/menu/category/<%= meal.category %>">
+                                            <%= meal.category %>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= meal.subcategory %>
+                                    </td>
+                                    <td>
+                                        <%= meal.price %>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </table>
+                </div>
+    </body>
+
+    </html>

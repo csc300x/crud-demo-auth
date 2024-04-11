@@ -1,0 +1,63 @@
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: auto;
+  caption-side: top;
+  empty-cells: hide;
+  table-layout: auto;
+}
+
+#product-detail-container {
+  width: 70%;
+  margin: auto;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+span {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+#product-detail-container {
+  display: none;
+}
+
+#form-popup, #update-form-popup {
+  display: none;
+  border: 3px solid blue;
+}
+
+#form-container, #update-form-container {
+  max-width: 300px;
+  margin: auto;
+  padding: 10px;
+}
+
+.card-holder {
+  width:400px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  text-align: center;
+}
+
+.card-holder h3 {
+  margin-top: 20px;
+  font-size: 24px;
+}

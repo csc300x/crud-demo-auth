@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+  <title>
+    <%= title %>
+  </title>
+  </head>
+
+  <body>
+    <% if(typeof user!='undefined' ){ %>
+      <p>Your email: <%= user.emails[0].value %>
+      </p>
+      <a href="/auth/logout"><button class="btn">Logout</button></a>
+      <% } else{ %>
+        <a href="/auth/google"><button class="btn">Login with Google</button></a>
+        <% } %>
+
+          <main>
+            <h1>Menu CRUD Demo App</h1>
+            <a href="/menu/all">View Menu List</a>
+          </main>
+  </body>
+
+  </html>
