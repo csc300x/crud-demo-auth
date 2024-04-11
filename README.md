@@ -1,1 +1,13 @@
 # crud-demo-auth
+- clone this repository
+- at the home directory, run `npm install`
+- Go to [the Google API Console](https://console.cloud.google.com/) and generate new credentials
+   - Make a new project
+   - Complete the auth consent screen
+   - generate OAuth Client ID credentials for the Web Project
+   - `Authorized JavaScript origins`: http://localhost:8000
+   - `Authorized redirect URIs`: http://localhost:8000/auth/google/callback
+   - Download the JSON file of credentials.
+- Replace the placeholder text in the `.env` file with the credentials from the previous step for Client ID and Client Secret.
+- Start the server with `nodemon server.js`
+- Navigate to http://localhost:8000/
